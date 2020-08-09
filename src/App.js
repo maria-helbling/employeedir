@@ -1,25 +1,18 @@
 import React from 'react';
-import Nav from './components/Nav'
-import Searchbar from './components/Searchbar'
-import EmployeeTable from './components/EmployeeTable';
+import OnlyPage from './pages/OnlyPage'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 
-class App extends React.Component() {
-  state = {
-    result:[],
-    search: ''
-  };
+function App() {
   
-  render () {
     return (
-      <>
-      <Nav />
-      
-      <EmployeeTable />
-      </>
+      <Router>
+        <Route path="/">
+          <OnlyPage/>
+        </Route>
+      </Router>
   
     )
-  }
     
 }
 
