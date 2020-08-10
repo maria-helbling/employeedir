@@ -13,3 +13,7 @@
     border:none;
     background-color: lightgray;
 }
+
+.navbar {
+    box-shadow: 0px 5px 5px lightgray;
+}

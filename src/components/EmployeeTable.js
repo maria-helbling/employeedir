@@ -23,7 +23,7 @@ function EmployeeTable (props) {
                     <div className="col-3"><h4>Address</h4></div>
                 </div>
                 {props.employees.sort(props.sortEmployees).map(empl => (
-                <div className={`row p-2 ${getColor(isOdd)}`} key={empl.id.value}>
+                <div className={`row p-2 m-2 ${getColor(isOdd)}`} key={empl.id.value}>
                     <div key={empl.id.value} className="col-1">
                     <img src={empl.picture.thumbnail} className="align-self-center mr-3" alt={`${empl.name.first} ${empl.name.last}`}/>
                     </div>

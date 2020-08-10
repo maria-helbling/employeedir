@@ -3,6 +3,7 @@ import API from '../utils/API';
 import Searchbar from '../components/Searchbar'
 import EmployeeTable from '../components/EmployeeTable'
 import Nav from '../components/Nav'
+import './pages.css'
 
 class OnlyPage extends Component {
     state ={
@@ -55,7 +56,7 @@ class OnlyPage extends Component {
         return(
             <>
                 <Nav />
-                    <div className="container">
+                    <div className="container p-2" id='tableContainer'>
                         <Searchbar search={this.state.search} handleInputChange={this.handleInputChange} employees={this.state.result}/>
                         <EmployeeTable employees={this.state.filterList} changeSort={this.changeSort} sortEmployees={this.sortEmployees} sort={this.state.sort}/>
                     </div>
