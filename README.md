@@ -48,5 +48,3 @@ There are no project specific tests provided.
 ## Questions
   
 Link to author's [gitHub profile](https://github.com/maria-helbling).
-  
-In case of further questions, e-mail: 
