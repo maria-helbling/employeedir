@@ -23,7 +23,7 @@ This is a nodejs app, so needs the usual node installation steps of npm install 
   
 As a user, I want to be able to view my entire employee directory at once so that I have a quick access to their information. An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It is particularly useful to be able to search for a colleague by name or sort them in alphabetical order.
 
-![Screenshot of app](public\screenshot.PNG)
+![Screenshot of app](public/screenshot.PNG)
   
 ## License
   
