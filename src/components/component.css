@@ -1,0 +1,15 @@
+#sort-btn {
+    background: none;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+}
+
+#sort-btn:hover {
+    box-shadow: 0px 0px 2px lightgray;
+}
+
+#sort-btn:active {
+    border:none;
+    background-color: lightgray;
+}

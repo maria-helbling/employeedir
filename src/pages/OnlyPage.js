@@ -8,7 +8,8 @@ class OnlyPage extends Component {
     state ={
         result: [],
         search: '',
-        sort:1
+        sort:1,
+        filterList:[]
     }
 
     componentDidMount(){
@@ -28,22 +29,26 @@ class OnlyPage extends Component {
     }
 
     changeSort = () => {
-        if (this.state.sort =1) {
+        if (this.state.sort ===1) {
 
             this.setState({sort: -1})
         } else {
             this.setState({sort: 1})
         }
+        this.setState({result: this.state.result.sort(this.sortEmployees)})
     }
 
     loadEmployees = async () =>{
         const empList = await API.getEmployees()
         let list = empList.data.results.sort(this.sortEmployees)
-        this.setState({result: list})
+        this.setState({result: list, filterList:list})
     }
 
-    handleFormSubmit = (e) =>{
+    handleInputChange = (e) =>{
         e.preventDefault();
+        let newArr = [...this.state.result]
+            this.setState({ search: e.target.value,
+            filterList: newArr.filter(empl=>(empl.name.first.includes(e.target.value) || empl.name.last.includes(e.target.value) )) })
     }
 
     render(){
@@ -51,8 +56,8 @@ class OnlyPage extends Component {
             <>
                 <Nav />
                     <div className="container">
-                        <Searchbar />
-                        <EmployeeTable employees={this.state.result} changeSort={this.changeSort} sortEmployees={this.sortEmployees} sort={this.state.sort}/>
+                        <Searchbar search={this.state.search} handleInputChange={this.handleInputChange} employees={this.state.result}/>
+                        <EmployeeTable employees={this.state.filterList} changeSort={this.changeSort} sortEmployees={this.sortEmployees} sort={this.state.sort}/>
                     </div>
             </>
         )
